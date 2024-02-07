@@ -21,7 +21,6 @@ DEBUG = os.getenv("DEBUG", "0").lower() in ["true", "t", "1"]
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(" ")
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -32,6 +31,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # 3rd party
+    "django_translation_flags",
     # local
     "accounts",
     "main",
@@ -43,11 +43,13 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "crum.CurrentRequestUserMiddleware",
 ]
 
 ROOT_URLCONF = "core.urls"
@@ -63,6 +65,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "core.context_processor.global_variables",
             ],
         },
     },
@@ -77,7 +80,6 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     "default": dj_database_url.parse(os.getenv("DATABASE_URL"), conn_max_age=600),
 }
-
 
 
 # Password validation
@@ -102,9 +104,30 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
+
+def gettext(s):
+    return s
+
+
+"""
+    ('it', gettext('Italian')),
+    ('es', gettext('Spanish')),
+    ('ru', gettext('Russian')),
+    ('fr', gettext('French')),
+"""
+
+
+LANGUAGES = (
+    ("de", gettext("German")),
+    ("en", gettext("English")),
+    ('fr', gettext('French')),
+)
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = "en-us"
+
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Africa/Lagos"
 
 USE_I18N = True
 
