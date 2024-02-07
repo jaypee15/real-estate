@@ -50,7 +50,7 @@ class CustomUser(AbstractUser):
     username = None
     phone = models.CharField(max_length=20, null=True,
                              verbose_name=_("Phone"))
-    address = models.ForeignKey('core.Address', null=True, blank=True,
+    address = models.ForeignKey('main.Address', null=True, blank=True,
                                 on_delete=models.DO_NOTHING,
                                 verbose_name=_("Address"))
     email = models.EmailField(unique=True, verbose_name=_("Email"))

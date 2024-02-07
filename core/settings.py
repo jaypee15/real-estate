@@ -34,6 +34,9 @@ INSTALLED_APPS = [
     # 3rd party
     # local
     "accounts",
+    "main",
+    "connects",
+    "listings",
 ]
 
 MIDDLEWARE = [
