@@ -4,7 +4,7 @@ from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 from django.contrib.admin.widgets import AdminFileWidget
 from .models import (Listing, ListingImage, ListingType)
-# from documents.admin import (InlineListingFileAdmin)
+from files.admin import (InlineListingFileAdmin)
 
 
 def set_online(modeladmin, request, queryset):
@@ -38,7 +38,7 @@ class ListingImageAdmin(admin.StackedInline):
 
 @admin.register(Listing)
 class ListingAdmin(admin.ModelAdmin):
-    # inlines = [ListingImageAdmin, InlineListingFileAdmin]
+    inlines = [ListingImageAdmin, InlineListingFileAdmin]
     search_fields = ('realtor__firstname', 'realtor__lastname', 'title',
                      'description', 'address__street', 'address__city',
                      'address__state', 'address__zipcode', 'price',
