@@ -1,5 +1,5 @@
 from django import template
-from contacts.models import Contact
+from connects.models import Contact
 from listings.models import Listing
 from crum import get_current_user
 
