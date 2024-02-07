@@ -32,6 +32,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # 3rd party
     "django_translation_flags",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
     # local
     "accounts",
     "main",
@@ -50,6 +54,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "crum.CurrentRequestUserMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = "core.urls"
@@ -120,7 +125,7 @@ def gettext(s):
 LANGUAGES = (
     ("de", gettext("German")),
     ("en", gettext("English")),
-    ('fr', gettext('French')),
+    ("fr", gettext("French")),
 )
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = "en-us"
@@ -133,8 +138,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
-
+LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -154,6 +158,27 @@ MEDIA_ROOT = BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "accounts.CustomUser"
+
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        },
+    }
+}
+
+AUTHENTICATION_BACKENDS = (
+    # used for default signin such as loggin into admin panel
+    "django.contrib.auth.backends.ModelBackend",
+    # used for social authentications
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+LOGIN_REDIRECT_URL = "index"
 
 LOGGING = {
     "version": 1,

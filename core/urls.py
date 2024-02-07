@@ -43,8 +43,8 @@ urlpatterns = i18n_patterns(
     path("listings/", include("listings.urls")),
     path("accounts/", include("accounts.urls")),
     path("accounts/", include("allauth.urls")),
-    path("contacts/", include("contacts.urls")),
-    path("listings/", include("documents.urls")),
+    path("contacts/", include("connects.urls")),
+    path("listings/", include("files.urls")),
 )
 
 
