@@ -1,4 +1,4 @@
-{% extends 'core/base.html' %}
+{% extends 'main/base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 
@@ -33,7 +33,7 @@
 </section>
 
 <!-- Alerts -->
-{% include 'core/partials/_alerts.html' %}
+{% include 'main/partials/_alerts.html' %}
 
 <section id="dashboard" class="py-4">
   <div class="container">
@@ -80,7 +80,7 @@
                 <p class="text-danger">{{ form.phone.errors }}</p>
               </div>
             </div>
-            {% include 'core/partials/btn_save_back.html' %}
+            {% include 'main/partials/btn_save_back.html' %}
           </form>
         </div>
       </div>

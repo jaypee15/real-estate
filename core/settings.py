@@ -30,12 +30,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.humanize",
     # 3rd party
     "django_translation_flags",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
+    "crispy_forms",
     # local
     "accounts",
     "main",
@@ -70,7 +72,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "core.context_processor.global_variables",
+                "main.context_processors.global_variables",
             ],
         },
     },
@@ -126,6 +128,8 @@ LANGUAGES = (
     ("de", gettext("German")),
     ("en", gettext("English")),
     ("fr", gettext("French")),
+    ("it", gettext("Italian")),
+    ("es", gettext("Spanish")),
 )
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = "en-us"

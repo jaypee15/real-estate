@@ -1,4 +1,4 @@
-{% extends 'core/base.html' %}
+{% extends 'main/base.html' %}
 {% load static %}
 
 
@@ -17,7 +17,7 @@
           </div>
           <div class="card-body bg-light">
             <!-- Alerts -->
-            {% include 'core/partials/_alerts.html' %}
+            {% include 'main/partials/_alerts.html' %}
             <form action="{% url 'login' %}" method="POST">
               {% csrf_token %}
               <div class="form-group">

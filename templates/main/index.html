@@ -1,10 +1,10 @@
-{% extends 'core/base.html' %}
+{% extends 'main/base.html' %}
 {% load static %}
 
 {% load humanize %}
 {% block extrastyle %}
 
-<meta name="description" content="Real estate manager. 
+<meta name="description" content="Realty Management. 
 Offers the best real estate objects and takes care of every aspect for you.
 Services offered: renting, selling, buying, consultation and way more."/>
 {% endblock %}
@@ -23,23 +23,23 @@ Services offered: renting, selling, buying, consultation and way more."/>
 
           <div class="col-12 col-lg-8 p-0 text-left">
             <h1 class="display-4 font-weight-bold mb-3">
-              {{ _("Property Searching Just Got So Easy") }}
+              {{ _("Finding The Right Property Just Got Easy") }}
             </h1>
-            <p class="lead mb-5">{{ _("We offer extraordinary properties across all price classes.") }}</p>
+            <p class="lead mb-5">{{ _("Get properties across all price and types.") }}</p>
           </div>
 
           <div class="col-4"></div>
         </div>
 
 
-        {% include 'core/partials/_search.html' %}
+        {% include 'main/partials/_search.html' %}
       </div>
     </div>
   </div>
 </section>
 <br>
 <!-- Alerts -->
-{% include 'core/partials/_alerts.html' %}
+{% include 'main/partials/_alerts.html' %}
 
 <!-- Listings -->
 <section id="listings" class="my-5">

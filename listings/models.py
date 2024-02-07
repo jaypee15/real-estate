@@ -63,7 +63,7 @@ class Listing(models.Model):
     bathrooms = models.PositiveIntegerField(verbose_name=_("Bathrooms"))
     garage = models.IntegerField(default=0, verbose_name=_("Garage"))
     sqft = models.FloatField(verbose_name=_("m²"))
-    lot_size = models.FloatField(verbose_name=_("Lot size"))  
+    lot_size = models.FloatField(verbose_name=_("Lot size"))
     image = models.ImageField(upload_to=listing_dir_path, verbose_name=_("Image"))
     listing_for = models.CharField(
         max_length=5, choices=LISTING_CHOICE, default="S", verbose_name=_("Listing for")

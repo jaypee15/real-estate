@@ -1,11 +1,11 @@
-{% extends 'core/base.html' %}
+{% extends 'main/base.html' %}
 {% load static %}
 
 {% block title %} | Address {% endblock %}
 
 {% block content %}
 
-{% include 'core/partials/_showcase_section.html' %}
+{% include 'main/partials/_showcase_section.html' %}
 
 
 <!-- Breadcrumb -->
@@ -26,7 +26,7 @@
 </section>
 
 <!-- Alerts -->
-{% include 'core/partials/_alerts.html' %}
+{% include 'main/partials/_alerts.html' %}
 
 <section id="dashboard" class="py-4">
   <div class="container">
@@ -72,7 +72,7 @@
                 <p class="text-danger">{{ form.city.errors }}</p>
               </div>
             </div>
-            {% include 'core/partials/btn_save_back.html' %}
+            {% include 'main/partials/btn_save_back.html' %}
           </form>
         </div>
       </div>

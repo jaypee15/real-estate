@@ -1,4 +1,4 @@
-{% extends 'core/base.html' %}
+{% extends 'main/base.html' %}
 {% load static %}
 
 {% load humanize %}
@@ -14,7 +14,7 @@
         <h1 class="display-4 my-3 showcase-text">
           {{ title }}
         </h1>
-        {% include 'core/partials/_search.html' %}
+        {% include 'main/partials/_search.html' %}
 
       </div>
     </div>
@@ -55,7 +55,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        {% if listings.has_other_core %}
+        {% if listings.has_other_main %}
         <ul class="pagination">
           {% if listings.has_previous %}
           <li class="page-item">
