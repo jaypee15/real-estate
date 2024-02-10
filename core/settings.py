@@ -128,8 +128,8 @@ LANGUAGES = (
     ("de", gettext("German")),
     ("en", gettext("English")),
     ("fr", gettext("French")),
-    ("it", gettext("Italian")),
-    ("es", gettext("Spanish")),
+    ('it', gettext('Italian')),
+    ('es', gettext('Spanish')),
 )
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = "en-us"

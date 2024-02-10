@@ -6,7 +6,7 @@
  */
 
 :root {
-  --blue: #343A40;
+  --blue: #002349;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
@@ -19,8 +19,8 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #343A40;
-  --secondary: #459f8a;
+  --primary: #002349;
+  --secondary: #c29b40;
   --success: #09b48f;
   --info: #17a2b8;
   --warning: #ffc107;
@@ -63,9 +63,10 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #001731;
   text-align: left;
   background-color: #fff;
+  
 }
 
 [tabindex="-1"]:focus {
@@ -151,7 +152,7 @@ sup {
 }
 
 a {
-  color: #343A40;
+  color: #c29b40;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
@@ -2054,14 +2055,14 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-secondary {
   color: #212529;
-  background-color: #459f8a;
-  border-color: #459f8a;
+  background-color: #002349;
+  border-color: #c29b40;
 }
 
 .btn-secondary:hover {
   color: #fff;
-  background-color: #35B0A4;
-  border-color: #26a17f;
+  background-color: #002349;
+  border-color: #c29b40;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {
@@ -3001,7 +3002,6 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #495057;
   text-align: center;
   white-space: nowrap;
   background-color: #e9ecef;
@@ -7763,11 +7763,11 @@ a.text-primary:hover, a.text-primary:focus {
 }
 
 .text-secondary {
-  color: #459f8a !important;
+  color: #c29b40 !important;
 }
 
 a.text-secondary:hover, a.text-secondary:focus {
-  color: #26a17f !important;
+  color: #fd7e14 !important;
 }
 
 .text-success {

@@ -155,7 +155,7 @@ class ProfileUpdateView(SuccessMessageMixin, UpdateView):
         context["profile"] = True
         # Showcase Section Infos
         context["title"] = _("Manage Account")
-        context["subtitle"] = _("Manage your Real-Estate account")
+        context["subtitle"] = _("Manage your account")
         # SEO
         context["page_title"] = _("Profile")
         context["page_description"] = _("Realty Management." "Profile page.")
